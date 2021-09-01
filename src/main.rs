@@ -28,7 +28,7 @@ fn main() {
     let mut x: Vec<f64> = vec![0.0; len];
 
     // Define bins for the histogram
-    let mut bins: Vec<f64> = vec![0.0; 10]; // 10 bins
+    let mut bins: Vec<f64> = vec![0.0; 11]; // 10 bins
 
     for i in 0..bins.len() {
         bins[i] = i as f64 / 10.0;
@@ -94,7 +94,7 @@ fn main() {
     let mut y: Vec<f64> = vec![0.0; len];
 
     // Create empty pdf
-    let mut z: Vec<f64> = vec![0.0; 10];
+    let mut z: Vec<f64> = vec![0.0; len];
     
     // Iterate through and transform x into y
     for i in 0..len {
@@ -128,9 +128,9 @@ fn main() {
         plt.hist('y, 'bins, edgecolor = "black", linewidth = 1)
         plt.xticks(np.arange(0, 11) / 10)
 
-        # And plot PDF
-        plt.plot('x, 'z, color = "blue", linewidth = 3)
+        // And plot PDF
+        plt.plot('x, 'z, color = "black", linewidth = 3)
+        
         plt.show()
-
     }
 }
